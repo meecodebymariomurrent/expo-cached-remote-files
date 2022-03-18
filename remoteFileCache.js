@@ -40,12 +40,20 @@ export default class FileCacheManager {
 
     static async get(key) {
         const fileLocation = FileCacheManager.getCacheKey(key);
-        return await FileSystem.getContentUriAsync(fileLocation);
+        try {
+            return await FileSystem.getContentUriAsync(fileLocation);
+        } catch (ex) {
+            return Promise.reject(ex);
+        }
     }
 
     static async getContentAsString(key) {
         const fileLocation = FileCacheManager.getCacheKey(key);
-        return await FileSystem.readAsStringAsync(fileLocation);
+        try {
+            return await FileSystem.readAsStringAsync(fileLocation);
+        } catch (ex) {
+            return Promise.reject(ex);
+        }
     }
 
     static getCacheKey(key) {

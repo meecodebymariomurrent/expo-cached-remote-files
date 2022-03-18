@@ -8,7 +8,7 @@ export class FileCacheManager {
      *
      * @returns the file path
      */
-    static async getOrCache(uri: string, key: string, changedTimestamp: number | undefined): Promise<string>;
+    static async getOrCache(uri: string, key: string, changedTimestamp?: number): Promise<string>;
 
     /**
      * Gets a cached file uri by the cache key

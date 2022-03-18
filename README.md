@@ -17,6 +17,7 @@ npm install @meecode/expo-cached-remote-files --save
 ### getOrCache
 
 Saves the file from the given URI or retrieves the cached file content if already present.
+Note that the key must be unique, otherwise files will be overwritten with different content.
 
 ````javascript
 import {FileCacheManager} from '@meecode/expo-cached-remote-files'
@@ -29,6 +30,20 @@ import {FileCacheManager} from '@meecode/expo-cached-remote-files'
         } else {
             console.error('Response is empty', response);
         }
+    });
+````
+
+### get
+
+Get a cached file uri by the key
+
+````javascript
+import {FileCacheManager} from '@meecode/expo-cached-remote-files'
+
+  FileCacheManager
+    .get(`faq-${i18n.locale}`)
+    .then((response: any) => {
+        //TODO: implement
     });
 ````
 

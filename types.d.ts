@@ -8,7 +8,7 @@ export class FileCacheManager {
      *
      * @returns the file path
      */
-    static async getOrCache(uri: string, key: string, changedTimestamp?: number): Promise<string>;
+    static getOrCache(uri: string, key: string, changedTimestamp?: number): Promise<string>;
 
     /**
      * Gets a cached file uri by the cache key
@@ -17,7 +17,7 @@ export class FileCacheManager {
      *
      * @returns the file path
      */
-    static async get(key: string): Promise<string>;
+    static get(key: string): Promise<string>;
 
     /**
      * Gets the cached file content by cache key
@@ -26,5 +26,14 @@ export class FileCacheManager {
      *
      * @returns the file content as string
      */
-    static async getContentAsString(key: string): Promise<string>;
+    static getContentAsString(key: string): Promise<string>;
+
+    /**
+     * Gets the last modified timestamp for a given cache key
+     *
+     * @param key the cache key to use
+     *
+     * @return the last modified timestamp
+     */
+    static getLastModifiedTimeStamp(key): Promise<number>;
 }

@@ -47,6 +47,10 @@ import {FileCacheManager} from '@meecode/expo-cached-remote-files'
     });
 ````
 
+### getContentAsString
+
+### getLastModifiedTimeStamp
+
 ## TODOs
 
 - [ ] Support for binary files

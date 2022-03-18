@@ -25,6 +25,15 @@ export default class FileCacheManager {
         }
     }
 
+    static async getLastModifiedTimeStamp(key) {
+        const fileLocation = FileCacheManager.getCacheKey(key);
+        const fileInfo = await FileSystem.getInfoAsync(fileLocation);
+        if (fileInfo.exists) {
+            return fileInfo.modificationTime;
+        }
+        return Promise.reject('No file for the given key exists');
+    }
+
     static async updateCachedFile(uri, fileLocation) {
         const resumableDownload = await FileSystem.createDownloadResumable(uri, fileLocation, {});
         try {

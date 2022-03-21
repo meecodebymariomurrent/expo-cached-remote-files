@@ -12,6 +12,48 @@ npm install @meecode/expo-cached-remote-files --save
 
 - `expo-file-system`
 
+### Methods
+
+```typescript
+ /**
+     * Caches a file with the given uri and key when the timestamp is newer
+     *
+     * @param uri the uri of the file to cache
+     * @param key the cache key to use. must be unique for every file
+     * @param changedTimestamp the timestamp to check if the cached file is newer or not. default is undefined
+     *
+     * @returns the file path
+     */
+    static getOrCache(uri: string, key: string, changedTimestamp?: number): Promise<string>;
+
+    /**
+     * Gets a cached file uri by the cache key
+     *
+     * @param key the cache key to use
+     *
+     * @returns the file path
+     */
+    static get(key: string): Promise<string>;
+
+    /**
+     * Gets the cached file content by cache key
+     *
+     * @param key the cache key to use
+     *
+     * @returns the file content as string
+     */
+    static getContentAsString(key: string): Promise<string>;
+
+    /**
+     * Gets the last modified timestamp for a given cache key
+     *
+     * @param key the cache key to use
+     *
+     * @return the last modified timestamp
+     */
+    static getLastModifiedTimeStamp(key): Promise<number>;
+```
+
 ## Usage
 
 ### getOrCache
@@ -19,7 +61,7 @@ npm install @meecode/expo-cached-remote-files --save
 Saves the file from the given URI or retrieves the cached file content if already present.
 Note that the key must be unique, otherwise files will be overwritten with different content.
 
-````javascript
+````typescript
 import {FileCacheManager} from '@meecode/expo-cached-remote-files'
 
   FileCacheManager
@@ -37,7 +79,7 @@ import {FileCacheManager} from '@meecode/expo-cached-remote-files'
 
 Get a cached file uri by the key
 
-````javascript
+````typescript
 import {FileCacheManager} from '@meecode/expo-cached-remote-files'
 
   FileCacheManager
@@ -53,4 +95,4 @@ import {FileCacheManager} from '@meecode/expo-cached-remote-files'
 
 ## TODOs
 
-- [ ] Support for binary files
+See [TODOs](TODO.md)

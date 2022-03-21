@@ -1,6 +1,6 @@
 {
   "name": "@meecode/expo-cached-remote-files",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Cache remote files on the file system",
   "main": "index.js",
   "types": "types.d.ts",

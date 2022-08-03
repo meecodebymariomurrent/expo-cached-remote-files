@@ -1,6 +1,6 @@
 {
   "name": "@meecode/expo-cached-remote-files",
-  "version": "1.0.9",
+  "version": "1.0.12",
   "description": "Cache remote files on the file system",
   "main": "index.js",
   "types": "types.d.ts",
@@ -24,14 +24,14 @@
   "homepage": "https://github.com/meecodebymariomurrent/expo-cached-remote-files#readme",
   "peerDependencies": {
     "expo-file-system": "~13.1.0",
-    "react": ">17.0.1",
-    "react-native": ">0.64.3"
+    "react": "~18.0.0",
+    "react-native": "~0.69.3"
   },
   "devDependencies": {
     "expo-file-system": "~13.1.0",
     "react": "^17.0.1",
     "react-native": "^0.64.3",
-    "expo": ">44.0.6",
+    "expo": "~46.0.2",
     "@babel/cli": "7.17.6",
     "@babel/core": " 7.15.8",
     "@babel/plugin-proposal-class-properties": "7.14.5",
